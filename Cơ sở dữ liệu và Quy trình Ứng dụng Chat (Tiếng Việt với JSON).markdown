@@ -47,8 +47,8 @@ Lưu trữ thông tin chi tiết của người dùng.
 | area_code           | Mã vùng điện thoại               | String    | Ví dụ: "+84"                                                                                         |
 | email               | Địa chỉ email                      | String    | Ví dụ: "[user@example.com](mailto:user@example.com)"                                                    |
 | nickname            | Biệt danh                            | String    | Ví dụ: "Long"                                                                                        |
-| face_url            | [Xem chi tiết](./common-fields.md)      | String    | Ví dụ: "[http://localhost:10002/object/imAdmin/123.jpg](http://localhost:10002/object/imAdmin/123.jpg)" |
-| gender              | Giới tính                           | Integer   | Ví dụ: 1 (nam), 2 (nữ), 0 (không xác định)                                                      |
+| face_url            | URL ảnh đại diện                  | String    | Ví dụ: "[http://localhost:10002/object/imAdmin/123.jpg](http://localhost:10002/object/imAdmin/123.jpg)" |
+| gender              | Giới tính                           | Integer   | 1: nam,<br />2: nữ                                                                                    |
 | create_time         | Thời gian tạo                       | Timestamp | Ví dụ: 1747102234028 (Unix timestamp)                                                                |
 | change_time         | Thời gian chỉnh sửa gần nhất     | Timestamp | Ví dụ: 1747102234028 (Unix timestamp)                                                                |
 | birth_time          | Ngày sinh                            | Timestamp | Ví dụ: 946684800000 (Unix timestamp, 01/01/2000)                                                     |
@@ -57,7 +57,7 @@ Lưu trữ thông tin chi tiết của người dùng.
 | allow_beep          | Cài đặt thông báo âm thanh      | Boolean   | Ví dụ: true (bật âm thanh)                                                                         |
 | allow_add_friend    | Cho phép gửi yêu cầu kết bạn    | Boolean   | Ví dụ: true (cho phép kết bạn)                                                                    |
 | global_recv_msg_opt | Cài đặt nhận tin nhắn toàn cục | Integer   | Ví dụ: 0 (nhận tất cả), 1 (chặn)                                                                 |
-| register_type       | Phương thức đăng ký             | String    | Ví dụ: "email", "phone"                                                                              |
+| register_type       | Phương thức đăng ký             | String    | 1 "email"<br />2:"phone"                                                                               |
 
 ### 4. data_version (Phiên bản dữ liệu)
 
@@ -85,16 +85,16 @@ Quản lý thông tin xác thực của người dùng.
 
 Ghi lại chi tiết đăng ký của người dùng.
 
-| Trường     | Mô tả                          | Type      | Value Description                       |
-| ------------ | -------------------------------- | --------- | --------------------------------------- |
-| id           | Định danh duy nhất            | String    | Ví dụ: UUID hoặc chuỗi duy nhất    |
-| user_id      | Định danh người dùng        | String    | Ví dụ: "2704841096"                   |
-| device_id    | Định danh thiết bị           | String    | Ví dụ: "device123"                    |
-| ip           | Địa chỉ IP đăng ký         | String    | Ví dụ: "192.168.1.1"                  |
-| platform     | [Xem chi tiết](./common-fields.md) | String    | Ví dụ: "iOS", "Android"               |
-| account_type | Loại tài khoản                | String    | Ví dụ: "phone", "email"               |
-| mode         | Chế độ đăng ký             | String    | Ví dụ: "manual", "auto"               |
-| create_time  | Thời gian đăng ký            | Timestamp | Ví dụ: 1747102234028 (Unix timestamp) |
+| Trường     | Mô tả                            | Type      | Value Description                                                                                                 |
+| ------------ | ---------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------- |
+| id           | Định danh duy nhất              | String    | Ví dụ: UUID hoặc chuỗi duy nhất                                                                              |
+| user_id      | Định danh người dùng          | String    | Ví dụ: "2704841096"                                                                                             |
+| device_id    | Định danh thiết bị             | String    | Ví dụ: "device123"                                                                                              |
+| ip           | Địa chỉ IP đăng ký           | String    | Ví dụ: "192.168.1.1"                                                                                            |
+| platform     | Nền tảng (ví dụ: iOS, Android) | String    | 1: iOS, 2: Android, 3: Windows, 4: OSX, 5: WEB,<br />6: Mini Program, 7: Linux, 8: AndroidPad, 9: IPad, 10: Admin |
+| account_type | Loại tài khoản                  | String    | Ví dụ: "phone", "email"                                                                                         |
+| mode         |                                    | String    |                                                                                                                   |
+| create_time  | Thời gian đăng ký              | Timestamp | Ví dụ: 1747102234028 (Unix timestamp)                                                                           |
 
 ### 7. user (Người dùng)
 
@@ -105,63 +105,63 @@ Lưu trữ thông tin cốt lõi của người dùng.
 | id                  | Định danh duy nhất                 | String    | Ví dụ: UUID hoặc chuỗi duy nhất                                                                   |
 | user_id             | Định danh người dùng             | String    | Ví dụ: "2704841096"                                                                                  |
 | nickname            | Biệt danh                            | String    | Ví dụ: "Long"                                                                                        |
-| face_url            | [Xem chi tiết](./common-fields.md)      | String    | Ví dụ: "[http://localhost:10002/object/imAdmin/123.jpg](http://localhost:10002/object/imAdmin/123.jpg)" |
+| face_url            | URL ảnh đại diện                  | String    | Ví dụ: "[http://localhost:10002/object/imAdmin/123.jpg](http://localhost:10002/object/imAdmin/123.jpg)" |
 | ex                  | Thông tin bổ sung                   | String    | Ví dụ: "" (chuỗi rỗng hoặc JSON tùy chỉnh)                                                      |
 | app_manger_level    | Cấp độ quản lý ứng dụng        | Integer   | Ví dụ: 0 (người dùng thường)                                                                    |
-| global_recv_msg_opt | Cài đặt nhận tin nhắn toàn cục | Integer   | Ví dụ: 0 (nhận tất cả), 1 (chặn)                                                                 |
+| global_recv_msg_opt | Cài đặt nhận tin nhắn toàn cục | Integer   | 0: nhận tất cả<br />1: chặn                                                                        |
 | create_time         | Thời gian tạo                       | Timestamp | Ví dụ: 1747102234028 (Unix timestamp)                                                                |
 
 ### 8. user_login_record (Lịch sử đăng nhập)
 
 Theo dõi lịch sử đăng nhập của người dùng.
 
-| Trường   | Mô tả                          | Type      | Value Description                       |
-| ---------- | -------------------------------- | --------- | --------------------------------------- |
-| id         | Định danh duy nhất            | String    | Ví dụ: UUID hoặc chuỗi duy nhất    |
-| user_id    | Định danh người dùng        | String    | Ví dụ: "2704841096"                   |
-| login_time | Thời gian đăng nhập          | Timestamp | Ví dụ: 1747102234028 (Unix timestamp) |
-| ip         | Địa chỉ IP đăng nhập       | String    | Ví dụ: "192.168.1.1"                  |
-| device_id  | Định danh thiết bị           | String    | Ví dụ: "device123"                    |
-| platform   | [Xem chi tiết](./common-fields.md) | String    | Ví dụ: "iOS", "Android"               |
+| Trường   | Mô tả                            | Type      | Value Description                                                                                                 |
+| ---------- | ---------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------- |
+| id         | Định danh duy nhất              | String    | Ví dụ: UUID hoặc chuỗi duy nhất                                                                              |
+| user_id    | Định danh người dùng          | String    | Ví dụ: "2704841096"                                                                                             |
+| login_time | Thời gian đăng nhập            | Timestamp | Ví dụ: 1747102234028 (Unix timestamp)                                                                           |
+| ip         | Địa chỉ IP đăng nhập         | String    | Ví dụ: "192.168.1.1"                                                                                            |
+| device_id  | Định danh thiết bị             | String    | Ví dụ: "device123"                                                                                              |
+| platform   | Nền tảng (ví dụ: iOS, Android) | String    | 1: iOS, 2: Android, 3: Windows, 4: OSX, 5: WEB,<br />6: Mini Program, 7: Linux, 8: AndroidPad, 9: IPad, 10: Admin |
 
 ### 9. conversation_version (Phiên bản hội thoại)
 
 Quản lý nhật ký phiên bản hội thoại.
 
-| Trường    | Mô tả                             | Type      | Value Description                       |
-| ----------- | ----------------------------------- | --------- | --------------------------------------- |
-| id          | Định danh duy nhất               | String    | Ví dụ: UUID hoặc chuỗi duy nhất    |
-| d_id        | Định danh hội thoại             | String    | Ví dụ: "conversation123"              |
-| logs        | Nhật ký phiên bản (chuỗi JSON) | JSON      | Ví dụ: {"action": "add_friend"}       |
-| version     | Số phiên bản                     | Integer   | Ví dụ: 1                              |
-| deleted     | Trạng thái xóa                   | Boolean   | Ví dụ: false (chưa xóa)             |
-| last_update | Thời gian cập nhật gần nhất    | Timestamp | Ví dụ: 1747102234028 (Unix timestamp) |
+| Trường    | Mô tả                          | Type      | Value Description                                |
+| ----------- | -------------------------------- | --------- | ------------------------------------------------ |
+| id          | Định danh duy nhất            | String    | Ví dụ: UUID hoặc chuỗi duy nhất             |
+| d_id        | user_id                          | String    |                                                  |
+| logs        | Nhật ký phiên bản           | Array     | {**e_id**: **"doc_id (msg)"**, ....} |
+| version     | Số phiên bản                  | Integer   | Ví dụ: 1                                       |
+| deleted     | Trạng thái xóa                | Boolean   | Ví dụ: false (chưa xóa)                      |
+| last_update | Thời gian cập nhật gần nhất | Timestamp | Ví dụ: 1747102234028 (Unix timestamp)          |
 
 ### 10. friend_version (Phiên bản bạn bè)
 
 Quản lý nhật ký phiên bản quan hệ bạn bè.
 
-| Trường    | Mô tả                             | Type      | Value Description                       |
-| ----------- | ----------------------------------- | --------- | --------------------------------------- |
-| id          | Định danh duy nhất               | String    | Ví dụ: UUID hoặc chuỗi duy nhất    |
-| d_id        | Định danh quan hệ bạn bè       | String    | Ví dụ: "friendship123"                |
-| logs        | Nhật ký phiên bản (chuỗi JSON) | JSON      | Ví dụ: {"action": "add_friend"}       |
-| version     | Số phiên bản                     | Integer   | Ví dụ: 1                              |
-| deleted     | Trạng thái xóa                   | Boolean   | Ví dụ: false (chưa xóa)             |
-| last_update | Thời gian cập nhật gần nhất    | Timestamp | Ví dụ: 1747102234028 (Unix timestamp) |
+| Trường    | Mô tả                          | Type      | Value Description                           |
+| ----------- | -------------------------------- | --------- | ------------------------------------------- |
+| id          | Định danh duy nhất            | String    | Ví dụ: UUID hoặc chuỗi duy nhất        |
+| d_id        | user_id                          | String    |                                             |
+| logs        | Nhật ký phiên bản            | Array     | {**e_id**: **"user_id"**, ....} |
+| version     | Số phiên bản                  | Integer   | Ví dụ: 1                                  |
+| deleted     | Trạng thái xóa                | Boolean   | Ví dụ: false (chưa xóa)                 |
+| last_update | Thời gian cập nhật gần nhất | Timestamp | Ví dụ: 1747102234028 (Unix timestamp)     |
 
 ### 11. group_join_version (Phiên bản tham gia nhóm)
 
 Quản lý nhật ký phiên bản tham gia nhóm.
 
-| Trường    | Mô tả                             | Type      | Value Description                       |
-| ----------- | ----------------------------------- | --------- | --------------------------------------- |
-| id          | Định danh duy nhất               | String    | Ví dụ: UUID hoặc chuỗi duy nhất    |
-| d_id        | Định danh tham gia nhóm          | String    | Ví dụ: "groupjoin123"                 |
-| logs        | Nhật ký phiên bản (chuỗi JSON) | JSON      | Ví dụ: {"action": "join_group"}       |
-| version     | Số phiên bản                     | Integer   | Ví dụ: 1                              |
-| deleted     | Trạng thái xóa                   | Boolean   | Ví dụ: false (chưa xóa)             |
-| last_update | Thời gian cập nhật gần nhất    | Timestamp | Ví dụ: 1747102234028 (Unix timestamp) |
+| Trường    | Mô tả                             | Type      | Value Description                           |
+| ----------- | ----------------------------------- | --------- | ------------------------------------------- |
+| id          | Định danh duy nhất               | String    | Ví dụ: UUID hoặc chuỗi duy nhất        |
+| d_id        | user_id                             | String    |                                             |
+| logs        | Nhật ký phiên bản (chuỗi JSON) | Array     | {**e_id**: **"user_id"**, ....} |
+| version     | Số phiên bản                     | Integer   | Ví dụ: 1                                  |
+| deleted     | Trạng thái xóa                   | Boolean   | Ví dụ: false (chưa xóa)                 |
+| last_update | Thời gian cập nhật gần nhất    | Timestamp | Ví dụ: 1747102234028 (Unix timestamp)     |
 
 ### 12. friend_request (Yêu cầu kết bạn)
 
@@ -213,7 +213,7 @@ Mỗi phần tử trong mảng `msgs` đại diện cho một tin nhắn cụ th
 | Trường | Mô tả                                                    | Type    | Value Description                                         |
 | -------- | ---------------------------------------------------------- | ------- | --------------------------------------------------------- |
 | msg      | Đối tượng tin nhắn, chứa chi tiết về tin nhắn     | JSON    | Đối tượng chứa chi tiết tin nhắn (xem bên dưới) |
-| revoke   | Thông tin thu hồi (null nếu chưa thu hồi)             | JSON    | Ví dụ: null hoặc {"revokerID": "2704841096"}           |
+| revoke   | Thông tin thu hồi (null nếu chưa thu hồi)             | JSON    | {role: "", user_id: "", nickname: "", time: ""}           |
 | del_list | Mảng ID người đã xóa tin nhắn                       | Array   | Ví dụ: ["2704841096"]                                   |
 | is_read  | Trạng thái đã đọc của phần tử tin nhắn (boolean) | Boolean | Ví dụ: true (đã đọc)                                |
 
@@ -221,30 +221,30 @@ Mỗi phần tử trong mảng `msgs` đại diện cho một tin nhắn cụ th
 
 Đối tượng `msg` trong mỗi phần tử của `msgs` chứa các trường sau:
 
-| Trường           | Mô tả                                                     | Type    | Value Description                                                                                      |
-| ------------------ | ----------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------ |
-| send_id            | ID người gửi                                             | String  | Ví dụ: "2704841096"                                                                                  |
-| recv_id            | ID người nhận                                            | String  | Ví dụ: "3074200874"                                                                                  |
-| group_id           | ID nhóm (nếu có, trong trường hợp chat nhóm)         | String  | Ví dụ: "1220940503"                                                                                  |
-| client_msg_id      | ID tin nhắn phía client                                   | String  | Ví dụ: "503c1a18d156a3b2cc3e52fecaad1e22"                                                            |
-| server_msg_id      | ID tin nhắn phía server                                   | String  | Ví dụ: "478f92e89458afb561442b2afbafdbc3"                                                            |
-| sender_platform_id | Nền tảng gửi (ví dụ: 0, 5)                             | Integer | [Xem chi tiết](./common-fields.md)                                                                       |
-| sender_nickname    | Biệt danh người gửi                                     | String  | Ví dụ: "Long"                                                                                        |
-| sender_face_url    | URL ảnh đại diện người gửi                           | String  | Ví dụ: "[http://localhost:10002/object/imAdmin/123.jpg](http://localhost:10002/object/imAdmin/123.jpg)" |
-| session_type       | Loại phiên (ví dụ: đơn, nhóm)                        | String  | [Xem chi tiết](./common-fields.md)                                                                       |
-| msg_from           | Nguồn tin nhắn                                            | String  | Ví dụ: "user"                                                                                        |
-| content_type       | Loại nội dung (ví dụ: văn bản, hình ảnh)            | Integer | [Xem chi tiết](./msg-content.md)                                                                         |
-| content            | Đối tượng nội dung (chuỗi JSON)                       | JSON    | [Xem chi tiết](./msg-content.md)                                                                         |
-| seq                | Số thứ tự (số nguyên dài)                             | Long    | Ví dụ: 10                                                                                            |
-| send_time          | Thời gian gửi (số nguyên dài)                          | Long    | Ví dụ: 1747100584458                                                                                 |
-| create_time        | Thời gian tạo (số nguyên dài)                          | Long    | Ví dụ: 1747100584425                                                                                 |
-| status             | Trạng thái tin nhắn                                      | String  | Ví dụ: "sent", "delivered"                                                                           |
-| is_read            | Trạng thái đã đọc của tin nhắn (boolean)            | Boolean | Ví dụ: true (đã đọc)                                                                             |
-| options            | Tùy chọn tin nhắn (JSON)                                 | JSON    | Ví dụ: {"offlinePush": true, "unreadCount": true}                                                    |
-| offline_push       | Cài đặt đẩy ngoại tuyến (JSON)                       | JSON    | Ví dụ: {"title": "New message", "desc": "You have a new message"}                                    |
-| at_user_id_list    | Danh sách ID người được đề cập (có thể là null) | Array   | Ví dụ: ["2860551843"], ["AtAllTag"]                                                                  |
-| attached_info      | Thông tin đính kèm                                      | String  | Ví dụ: "" (chuỗi rỗng hoặc JSON tùy chỉnh)                                                      |
-| ex                 | Thông tin bổ sung                                         | String  | Ví dụ: "" (chuỗi rỗng hoặc JSON tùy chỉnh)                                                      |
+| Trường           | Mô tả                                                     | Type    | Value Description                                                                                                 |
+| ------------------ | ----------------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
+| send_id            | ID người gửi                                             | String  | Ví dụ: "2704841096"                                                                                             |
+| recv_id            | ID người nhận                                            | String  | Ví dụ: "3074200874"                                                                                             |
+| group_id           | ID nhóm (nếu có, trong trường hợp chat nhóm)         | String  | Ví dụ: "1220940503"                                                                                             |
+| client_msg_id      | ID tin nhắn phía client                                   | String  | Ví dụ: "503c1a18d156a3b2cc3e52fecaad1e22"                                                                       |
+| server_msg_id      | ID tin nhắn phía server                                   | String  | Ví dụ: "478f92e89458afb561442b2afbafdbc3"                                                                       |
+| sender_platform_id | Nền tảng gửi (ví dụ: 0, 5)                             | Integer | 1: iOS, 2: Android, 3: Windows, 4: OSX, 5: WEB,<br />6: Mini Program, 7: Linux, 8: AndroidPad, 9: IPad, 10: Admin |
+| sender_nickname    | Biệt danh người gửi                                     | String  | Ví dụ: "Long"                                                                                                   |
+| sender_face_url    | URL ảnh đại diện người gửi                           | String  | Ví dụ: "[http://localhost:10002/object/imAdmin/123.jpg](http://localhost:10002/object/imAdmin/123.jpg)"            |
+| session_type       | Loại phiên (ví dụ: đơn, nhóm)                        | String  | 1: Trò chuyện đơn,<br />3: Trò chuyện nhóm, <br />4: Thông báo hệ thống                                |
+| msg_from           | Nguồn tin nhắn                                            | String  | Ví dụ: "user"                                                                                                   |
+| content_type       | Loại nội dung (ví dụ: văn bản, hình ảnh)            | Integer | [Xem chi tiết](./msg-content.md)                                                                                    |
+| content            | Đối tượng nội dung (chuỗi JSON)                       | JSON    | [Xem chi tiết](./msg-content.md)                                                                                    |
+| seq                | Số thứ tự (số nguyên dài)                             | Long    | Ví dụ: 10                                                                                                       |
+| send_time          | Thời gian gửi (số nguyên dài)                          | Long    | Ví dụ: 1747100584458                                                                                            |
+| create_time        | Thời gian tạo (số nguyên dài)                          | Long    | Ví dụ: 1747100584425                                                                                            |
+| status             | Trạng thái tin nhắn                                      | String  | Ví dụ: "sent", "delivered"                                                                                      |
+| is_read            | Trạng thái đã đọc của tin nhắn (boolean)            | Boolean | Ví dụ: true (đã đọc)                                                                                        |
+| options            | Tùy chọn tin nhắn (JSON)                                 | JSON    | Ví dụ: {"offlinePush": true, "unreadCount": true}                                                               |
+| offline_push       | Cài đặt đẩy ngoại tuyến (JSON)                       | JSON    | Ví dụ: {"title": "New message", "desc": "You have a new message"}                                               |
+| at_user_id_list    | Danh sách ID người được đề cập (có thể là null) | Array   | Ví dụ: ["2860551843"], ["AtAllTag"]                                                                             |
+| attached_info      | Thông tin đính kèm                                      | String  | Ví dụ: "" (chuỗi rỗng hoặc JSON tùy chỉnh)                                                                 |
+| ex                 | Thông tin bổ sung                                         | String  | Ví dụ: "" (chuỗi rỗng hoặc JSON tùy chỉnh)                                                                 |
 
 #### Các trường bổ sung từ tài liệu gốc
 
@@ -288,24 +288,24 @@ Quản lý siêu dữ liệu hội thoại.
 
 Bảng `group` lưu trữ thông tin về các nhóm trong ứng dụng chat, bao gồm chi tiết như tên nhóm, thông báo, cài đặt xác minh, và thông tin về người tạo nhóm.
 
-| Field                    | Description                                       | Type      | Value Description                                                                |
-| ------------------------ | ------------------------------------------------- | --------- | -------------------------------------------------------------------------------- |
-| id                       | Định danh duy nhất (tương ứng với `_id`) | String    | Ví dụ: "6822aa1ad1167980f541c7c4" (ObjectId)                                   |
-| group_id                 | ID nhóm                                          | String    | Ví dụ: "1220940503"                                                            |
-| group_name               | Tên nhóm                                        | String    | Ví dụ: "grouppp"                                                               |
-| notification             | Thông báo nhóm                                 | String    | Ví dụ: "Thông báo 123"                                                       |
-| introduction             | Giới thiệu nhóm                                | String    | Ví dụ: "" (chuỗi rỗng nếu không có)                                       |
-| face_url                 | URL ảnh đại diện nhóm                        | String    | Ví dụ: "" (chuỗi rỗng hoặc URL ảnh)                                        |
-| create_time              | Thời gian tạo nhóm                             | Timestamp | Ví dụ: "2025-05-13T02:10:34.025Z"                                              |
-| ex                       | Thông tin bổ sung                               | String    | Ví dụ: "" (chuỗi rỗng hoặc JSON tùy chỉnh)                                |
-| status                   | Trạng thái nhóm                                | Integer   | Ví dụ: 0 (hoạt động), 1 (khóa)                                             |
-| creator_user_id          | ID người tạo nhóm                             | String    | Ví dụ: "2704841096"                                                            |
-| group_type               | Loại nhóm                                       | Integer   | Ví dụ: 2 (nhóm công khai)                                                    |
-| need_verification        | Cài đặt xác minh tham gia nhóm               | Integer   | Ví dụ: 0 (mời không cần duyệt), 1 (cần duyệt), 2 (ai cũng vào được) |
-| look_member_info         | Cài đặt xem thông tin thành viên            | Integer   | Ví dụ: 1 (không cho phép), 0 (cho phép)                                     |
-| apply_member_friend      | Cài đặt cho phép thêm bạn qua nhóm         | Integer   | Ví dụ: 1 (không cho phép), 0 (cho phép)                                     |
-| notification_update_time | Thời gian cập nhật thông báo                 | Timestamp | Ví dụ: "2025-05-13T02:23:12.973Z"                                              |
-| notification_user_id     | ID người cập nhật thông báo                 | String    | Ví dụ: "2704841096"                                                            |
+| Field                    | Description                                                               | Type      | Value Description                                                                                                                                             |
+| ------------------------ | ------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                       | Định danh duy nhất (tương ứng với `_id`)                         | String    | Ví dụ: "6822aa1ad1167980f541c7c4" (ObjectId)                                                                                                                |
+| group_id                 | ID nhóm                                                                  | String    | Ví dụ: "1220940503"                                                                                                                                         |
+| group_name               | Tên nhóm                                                                | String    | Ví dụ: "grouppp"                                                                                                                                            |
+| notification             | Thông báo nhóm                                                         | String    | Ví dụ: "Thông báo 123"                                                                                                                                    |
+| introduction             | Giới thiệu nhóm                                                        | String    | Ví dụ: "" (chuỗi rỗng nếu không có)                                                                                                                    |
+| face_url                 | URL ảnh đại diện nhóm                                                | String    | Ví dụ: "" (chuỗi rỗng hoặc URL ảnh)                                                                                                                     |
+| create_time              | Thời gian tạo nhóm                                                     | Timestamp | Ví dụ: "2025-05-13T02:10:34.025Z"                                                                                                                           |
+| ex                       | Thông tin bổ sung                                                       | String    | Ví dụ: "" (chuỗi rỗng hoặc JSON tùy chỉnh)                                                                                                             |
+| status                   | Trạng thái nhóm                                                        | Integer   | 0: Hoạt động,<br />1: Bị cấm (không dùng), <br />2: Giải tán, <br />3: Tất cả bị cấm nói                                                        |
+| creator_user_id          | ID người tạo nhóm                                                     | String    | Ví dụ: "2704841096"                                                                                                                                         |
+| group_type               | Loại nhóm                                                               | Integer   | Ví dụ: 2 (nhóm công khai)                                                                                                                                 |
+| need_verification        | Cài đặt xác minh tham gia nhóm                                       | Integer   | 0: Yêu cầu tham gia cần phê duyệt, mời thành viên tự động;<br />1: Tất cả cần xác minh trừ lời mời quản trị; <br />2: Tham gia tự động |
+| look_member_info         | Cài đặt thành viên có thể xem thông tin thành viên khác không | Integer   | 0: Có,<br />1: Không                                                                                                                                        |
+| apply_member_friend      | Cài đặt cho phép thêm bạn qua nhóm                                 | Integer   | 0: Có, <br />1: Không                                                                                                                                       |
+| notification_update_time | Thời gian cập nhật thông báo                                         | Timestamp | Ví dụ: "2025-05-13T02:23:12.973Z"                                                                                                                           |
+| notification_user_id     | ID người cập nhật thông báo                                         | String    | Ví dụ: "2704841096"                                                                                                                                         |
 
 ### 17. group_member (Thành viên nhóm)
 
