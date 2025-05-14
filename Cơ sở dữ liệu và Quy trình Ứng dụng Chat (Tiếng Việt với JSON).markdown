@@ -132,7 +132,7 @@ Quản lý nhật ký phiên bản hội thoại.
 | ----------- | -------------------------------- | --------- | ------------------------------------------------ |
 | id          | Định danh duy nhất            | String    | Ví dụ: UUID hoặc chuỗi duy nhất             |
 | d_id        | user_id                          | String    |                                                  |
-| logs        | Nhật ký phiên bản           | Array     | {**e_id**: **"doc_id (msg)"**, ....} |
+| logs        | Nhật ký phiên bản            | Array     | {**e_id**: **"doc_id (msg)"**, ....} |
 | version     | Số phiên bản                  | Integer   | Ví dụ: 1                                       |
 | deleted     | Trạng thái xóa                | Boolean   | Ví dụ: false (chưa xóa)                      |
 | last_update | Thời gian cập nhật gần nhất | Timestamp | Ví dụ: 1747102234028 (Unix timestamp)          |
@@ -303,7 +303,7 @@ Bảng `group` lưu trữ thông tin về các nhóm trong ứng dụng chat, ba
 | group_type               | Loại nhóm                                                               | Integer   | Ví dụ: 2 (nhóm công khai)                                                                                                                                 |
 | need_verification        | Cài đặt xác minh tham gia nhóm                                       | Integer   | 0: Yêu cầu tham gia cần phê duyệt, mời thành viên tự động;<br />1: Tất cả cần xác minh trừ lời mời quản trị; <br />2: Tham gia tự động |
 | look_member_info         | Cài đặt thành viên có thể xem thông tin thành viên khác không | Integer   | 0: Có,<br />1: Không                                                                                                                                        |
-| apply_member_friend      | Cài đặt cho phép thêm bạn qua nhóm                                 | Integer   | 0: Có, <br />1: Không                                                                                                                                       |
+| apply_member_friend      | Cài đặt cho phép thêm bạn qua nhóm                                 | Integer   | 0: Có,<br />1: Không                                                                                                                                        |
 | notification_update_time | Thời gian cập nhật thông báo                                         | Timestamp | Ví dụ: "2025-05-13T02:23:12.973Z"                                                                                                                           |
 | notification_user_id     | ID người cập nhật thông báo                                         | String    | Ví dụ: "2704841096"                                                                                                                                         |
 
@@ -365,14 +365,7 @@ Theo dõi trình tự tin nhắn và trạng thái đã đọc của mỗi ngư�
 
 ### 1. Đăng ký
 
-Người dùng có thể đăng ký bằng hai phương thức.
-
-#### a. Tự đăng ký (qua Gmail)
-
-* **Trạng thái** : Chưa được triển khai.
-* **Quy trình** : Người dùng đăng ký bằng tài khoản Gmail.
-
-#### b. Đăng ký qua quản trị viên
+#### Đăng ký qua quản trị viên (api trong file api)
 
 * **Bảng được cập nhật** :
 * `account`: Tạo mục tài khoản mới.
